@@ -2,86 +2,84 @@ package Collection.Hashmap;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
-import java.util.Collection;
 
-/**
- * Class HashMapDemo
- * * Mini project chuyên biệt về HashMap.
- * * Demo toàn bộ các thao tác: Put, Get, Remove, ContainsKey, duyệt KeySet/EntrySet.
- */
+// Lớp Đối Tượng Tùy Chỉnh (Value)
+class Product {
+    private String name;
+    private double price;
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return name + " ($" + price + ")";
+    }
+}
+
 public class HashMapDemo {
 
     public static void main(String[] args) {
-        System.out.println("================ DEMO HASHMAP ================");
 
-        /**
-         * 1. Khởi tạo HashMap
-         * - Lưu trữ dưới dạng Key - Value.
-         * - Key là duy nhất (Unique). Value có thể trùng.
-         * - Không duy trì thứ tự chèn.
-         */
-        HashMap<String, Integer> productMap = new HashMap<>();
-        System.out.println("[Init] Khởi tạo productMap (Key: Tên SP, Value: Giá).");
+        // HashMap chính: Key là String (Mã sản phẩm), Value là đối tượng Product
+        // Ví dụ này minh họa việc sử dụng Object làm Value.
+        HashMap<String, Product> productMap = new HashMap<>();
 
-        /**
-         * 2. Thêm phần tử (put)
-         * Object put(Key, Value): Thêm cặp key-value. Nếu key đã tồn tại, value sẽ bị ghi đè.
-         */
-        productMap.put("Laptop Dell", 15000000);
-        productMap.put("Macbook Air", 25000000);
-        productMap.put("Mouse Logitech", 500000);
-        productMap.put("Laptop Dell", 14500000); // Ghi đè giá mới cho key "Laptop Dell"
+        System.out.println("--- 1. HashMap với Key (String) và Value (Object Tùy Chỉnh) ---");
 
-        System.out.println("[Put] Map hiện tại: " + productMap);
+        // Thêm các cặp key-value
+        productMap.put("P001", new Product("Laptop", 1200.0));
+        productMap.put("P002", new Product("Mouse", 25.5));
+        productMap.put("P003", new Product("Keyboard", 75.0));
 
-        /**
-         * 3. Truy xuất giá trị (get)
-         * Object get(Object key): Trả về value tương ứng với key.
-         */
-        System.out.println("[Get] Giá của 'Macbook Air': " + productMap.get("Macbook Air"));
-        System.out.println("[Get] Lấy key không tồn tại (Iphone): " + productMap.get("Iphone")); // Trả về null
+        // Lấy dữ liệu
+        Product laptop = productMap.get("P001");
+        System.out.println("Sản phẩm P001: " + laptop);
 
-        /**
-         * 4. Kiểm tra tồn tại (containsKey, containsValue)
-         */
-        boolean hasMouse = productMap.containsKey("Mouse Logitech");
-        System.out.println("[ContainsKey] Có bán chuột không? " + hasMouse);
+        // --- 2. HashMap với Key (Integer) và Value (String) ---
 
-        /**
-         * 5. Xóa phần tử (remove)
-         * Object remove(Object key): Xóa entry có key chỉ định.
-         */
-        productMap.remove("Mouse Logitech");
-        System.out.println("[Remove] Map sau khi xóa chuột: " + productMap);
+        // Ví dụ này minh họa việc sử dụng Key không phải là String.
+        // Key là Integer (Mã vùng), Value là String (Tên vùng)
+        HashMap<Integer, String> areaCodes = new HashMap<>();
 
-        /**
-         * 6. Duyệt Map
-         * Cách 1: Duyệt qua KeySet (Tập hợp các Key)
-         */
-        System.out.println("--- Duyệt qua keySet() ---");
-        Set<String> keys = productMap.keySet();
-        for (String key : keys) {
-            System.out.println("Key: " + key + " | Value: " + productMap.get(key));
+        System.out.println("\n--- 2. HashMap với Key (Integer) ---");
+
+        areaCodes.put(101, "Ha Noi");
+        areaCodes.put(202, "TP. Ho Chi Minh");
+        areaCodes.put(303, "Da Nang");
+
+        System.out.println("Mã 202 thuộc: " + areaCodes.get(202));
+
+        // --- 3. Minh họa Key/Value là NULL và Key duy nhất ---
+
+        // HashMap có thể chứa Key là null và Value là null
+        HashMap<String, String> configMap = new HashMap<>();
+
+        System.out.println("\n--- 3. Minh họa Key/Value là NULL và Key duy nhất ---");
+
+        // Cho phép 1 Key là null
+        configMap.put(null, "Giá trị mặc định của hệ thống");
+
+        // Cho phép nhiều Value là null
+        configMap.put("ServerName", "ServerA");
+        configMap.put("Timeout", null); // Giá trị null
+
+        // Key duy nhất: Ghi đè Key null nếu gọi put() lần nữa
+        String previousValue = configMap.put(null, "Giá trị null mới");
+        System.out.println("Giá trị cũ của Key null: " + previousValue); // Output: Giá trị mặc định...
+
+        System.out.println("Giá trị của key null hiện tại: " + configMap.get(null));
+        System.out.println("Giá trị của key Timeout: " + configMap.get("Timeout"));
+
+        // --- 4. Lặp qua các cặp Key/Value (Để thấy KHÔNG có thứ tự) ---
+
+        System.out.println("\n--- 4. Duyệt qua HashMap (Thứ tự KHÔNG đảm bảo) ---");
+        // Ta sử dụng entrySet() để duyệt qua cả Key và Value
+        for (Map.Entry<String, String> entry : configMap.entrySet()) {
+            // Lưu ý: Key null sẽ được in là 'null'
+            System.out.println("Key: " + entry.getKey() + " => Value: " + entry.getValue());
         }
-
-        /**
-         * Cách 2: Duyệt qua EntrySet (Tập hợp các cặp Key-Value) - Hiệu quả hơn
-         */
-        System.out.println("--- Duyệt qua entrySet() ---");
-        for (Map.Entry<String, Integer> entry : productMap.entrySet()) {
-            System.out.println("Sản phẩm: " + entry.getKey() + " - Giá: " + entry.getValue());
-        }
-
-        /**
-         * 7. Các method tiện ích khác (size, values, clear)
-         */
-        System.out.println("[Size] Tổng số sản phẩm: " + productMap.size());
-
-        Collection<Integer> prices = productMap.values();
-        System.out.println("[Values] Danh sách các mức giá: " + prices);
-
-        productMap.clear();
-        System.out.println("[Clear] Map đã xóa rỗng. IsEmpty? " + productMap.isEmpty());
     }
 }
