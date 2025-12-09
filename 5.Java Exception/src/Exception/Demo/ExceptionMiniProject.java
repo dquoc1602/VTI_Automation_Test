@@ -5,11 +5,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+// LƯU Ý: Đã loại bỏ dòng 'package Exception.Demo;' để đảm bảo code chạy được trong môi trường này.
+
 /**
  * Class ExceptionMiniProject
- * * Đây là một mini project tổng hợp để demo toàn bộ kiến thức về Java Exception
+ * Đây là một mini project tổng hợp để demo toàn bộ kiến thức về Java Exception
  * dựa trên tài liệu đã cung cấp.
- * * Các kiến thức bao gồm:
+ *
+ * Các kiến thức bao gồm:
  * 1. Phân loại Exception (Checked vs Unchecked).
  * 2. Các Exception phổ biến (Arithmetic, NullPointer, NumberFormat, v.v.).
  * 3. Cấu trúc xử lý: try-catch, try-finally, try-catch-finally.
@@ -26,6 +29,7 @@ public class ExceptionMiniProject {
      * Sử dụng vòng lặp while để tạo menu lựa chọn chức năng demo.
      */
     public static void main(String[] args) {
+        // [Image of Java Exception Hierarchy Chart]
         while (true) {
             System.out.println("\n================ JAVA EXCEPTION MINI PROJECT ================");
             System.out.println("1. Demo ArithmeticException (Lỗi toán học)");
