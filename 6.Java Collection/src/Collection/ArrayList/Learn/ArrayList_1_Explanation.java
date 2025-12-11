@@ -13,7 +13,7 @@ public class ArrayList_1_Explanation {
         ArrayList rawList = new ArrayList();
 
         System.out.println("--- 1. Kích thước Linh hoạt & Không cần khai báo kiểu trước ---");
-        rawList.add("Apple"); // Kiểu String
+        rawList.add("Apple");  // Kiểu String
         rawList.add(123);      // Kiểu Integer (Autoboxing)
         rawList.add(true);     // Kiểu Boolean (Autoboxing)
 
