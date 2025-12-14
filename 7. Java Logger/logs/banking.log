@@ -1,0 +1,16 @@
+2025-12-14 15:42:33.324 INFO  BankAccount - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 15:42:33.332 INFO  BankAccount - Tạo mới tài khoản cho khách hàng: Nguyen Van A | Số dư ban đầu: 5000000.0
+2025-12-14 15:42:33.334 INFO  BankAccount - Gửi tiền THÀNH CÔNG. Số tiền: 2000000.0 | Số dư mới: 7000000.0
+2025-12-14 15:42:33.335 ERROR BankAccount - Giao dịch thất bại: Số tiền gửi không hợp lệ (-50000.0)
+2025-12-14 15:42:33.335 INFO  BankAccount - Rút tiền THÀNH CÔNG. Số tiền: -1000000.0 | Số dư còn lại: 6000000.0
+2025-12-14 15:42:33.339 WARN  BankAccount - Cảnh báo: Khách hàng Nguyen Van A cố rút 1.0E7 nhưng chỉ có 6000000.0
+2025-12-14 16:17:16.080 INFO  BankAccount - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 16:17:16.087 INFO  BankAccount - Tạo mới tài khoản cho khách hàng: Nguyen Van A | Số dư ban đầu: 5000000.0
+2025-12-14 16:17:16.089 INFO  BankAccount - Gửi tiền THÀNH CÔNG. Số tiền: 2000000.0 | Số dư mới: 7000000.0
+2025-12-14 16:17:16.090 ERROR BankAccount - Giao dịch thất bại: Số tiền gửi không hợp lệ (-50000.0)
+2025-12-14 16:17:16.092 INFO  BankAccount - Rút tiền THÀNH CÔNG. Số tiền: -1000000.0 | Số dư còn lại: 6000000.0
+2025-12-14 16:17:16.095 WARN  BankAccount - Cảnh báo: Khách hàng Nguyen Van A cố rút 1.0E7 nhưng chỉ có 6000000.0

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+
+    <!-- ===================== -->
+    <!--  Appenders            -->
+    <!-- ===================== -->
+    <Appenders>
+
+        <!-- Console -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %c{1} - %msg%n"/>
+        </Console>
+
+        <!-- File chung -->
+        <RollingFile name="CommonFile"
+                     fileName="logs/app.log"
+                     filePattern="logs/app-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %c{1} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!-- File Banking -->
+        <RollingFile name="banking"
+                     fileName="logs/banking.log"
+                     filePattern="logs/banking-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %c{1} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <!-- File E-commerce -->
+        <RollingFile name="ecommerce"
+                     fileName="logs/ecommerce.log"
+                     filePattern="logs/ecommerce-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %c{1} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+
+    <!-- ===================== -->
+    <!--  Loggers              -->
+    <!-- ===================== -->
+    <Loggers>
+        <!-- ===================== -->
+        <!--  TRACE < DEBUG < INFO < WARN < ERROR < FATAL   -->
+        <!--
+            - Level giúp việc loại bỏ các logLevel thấp hơn.
+            - Ví dụ:
+                + level="info" -> Loại bỏ các trường hợp trace, debug.
+                + level="error" -> Loại bỏ các trường hợp trace, debug, info, warn
+        -->
+        <!--
+            - Additivity đóng vai trò quyết định log có "ghi lên" logger CHA hay không?
+            - Default additivity="true"
+            - Dùng khi:
+                + Muốn mỗi Module/project log ra file riêng
+                + Tránh log trùng
+                + Hệ thống lớn, cần nhiều logger con.
+            - Không nên dùng khi:
+                + Logger chỉ để set level
+                + Không có appender riêng
+        -->
+        <!-- ===================== -->
+
+        <!-- Banking -->
+        <Logger name="banking" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="banking"/>
+        </Logger>
+
+        <!-- E-commerce -->
+        <Logger name="ecommerce" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ecommerce"/>
+        </Logger>
+
+        <!-- ROOT LOGGER -->
+        <Root level="trace">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="CommonFile"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>
+
+

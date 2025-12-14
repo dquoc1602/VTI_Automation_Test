@@ -1,0 +1,131 @@
+2025-12-14 16:17:44.888 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=NguyenVanA, Product=iPhone 15
+2025-12-14 16:17:44.902 INFO  InventoryService - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 16:17:44.908 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 8
+2025-12-14 16:17:44.911 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: NguyenVanA | Số tiền: 2000.0
+2025-12-14 16:17:44.911 INFO  PaymentService - Thanh toán thành công!
+2025-12-14 16:17:44.912 INFO  OrderService - <<< ĐƠN HÀNG HOÀN TẤT THÀNH CÔNG CHO NguyenVanA
+2025-12-14 16:17:44.912 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=TranVanB, Product=iPhone 15
+2025-12-14 16:17:44.924 INFO  InventoryService - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 16:17:44.924 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 3
+2025-12-14 16:17:44.925 WARN  InventoryService - CẢNH BÁO: Hàng sắp hết (3 sản phẩm). Cần nhập thêm ngay!
+2025-12-14 16:17:44.925 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: TranVanB | Số tiền: 5000.0
+2025-12-14 16:17:44.926 INFO  PaymentService - Thanh toán thành công!
+2025-12-14 16:17:44.926 INFO  OrderService - <<< ĐƠN HÀNG HOÀN TẤT THÀNH CÔNG CHO TranVanB
+2025-12-14 16:17:44.926 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=RichKid, Product=iPhone 15
+2025-12-14 16:17:44.930 INFO  InventoryService - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 16:17:44.931 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 2
+2025-12-14 16:17:44.931 WARN  InventoryService - CẢNH BÁO: Hàng sắp hết (2 sản phẩm). Cần nhập thêm ngay!
+2025-12-14 16:17:44.931 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: RichKid | Số tiền: 13500.0
+2025-12-14 16:17:44.931 ERROR PaymentService - LỖI THANH TOÁN: Timeout kết nối đến ngân hàng cho giao dịch lớn.
+2025-12-14 16:17:44.931 ERROR OrderService - Hủy đơn hàng do thanh toán thất bại.
+2025-12-14 16:17:44.932 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=SlowGuy, Product=iPhone 15
+2025-12-14 16:17:44.933 INFO  InventoryService - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 16:17:44.936 ERROR InventoryService - Hết hàng! Khách mua 100 nhưng kho chỉ còn 2
+2025-12-14 16:17:44.936 INFO  OrderService - Hủy đơn hàng do hết kho.
+2025-12-14 16:19:35.568 INFO  InventoryService - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 16:19:35.574 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=NguyenVanA, Product=iPhone 15
+2025-12-14 16:19:35.586 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 8
+2025-12-14 16:19:35.588 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: NguyenVanA | Số tiền: 2000.0
+2025-12-14 16:19:35.588 INFO  PaymentService - Thanh toán thành công!
+2025-12-14 16:19:35.589 INFO  OrderService - <<< ĐƠN HÀNG HOÀN TẤT THÀNH CÔNG CHO NguyenVanA
+2025-12-14 16:19:35.589 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=TranVanB, Product=iPhone 15
+2025-12-14 16:19:35.590 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 3
+2025-12-14 16:19:35.590 WARN  InventoryService - CẢNH BÁO: Hàng sắp hết (3 sản phẩm). Cần nhập thêm ngay!
+2025-12-14 16:19:35.590 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: TranVanB | Số tiền: 5000.0
+2025-12-14 16:19:35.591 INFO  PaymentService - Thanh toán thành công!
+2025-12-14 16:19:35.591 INFO  OrderService - <<< ĐƠN HÀNG HOÀN TẤT THÀNH CÔNG CHO TranVanB
+2025-12-14 16:19:35.591 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=RichKid, Product=iPhone 15
+2025-12-14 16:19:35.593 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 2
+2025-12-14 16:19:35.595 WARN  InventoryService - CẢNH BÁO: Hàng sắp hết (2 sản phẩm). Cần nhập thêm ngay!
+2025-12-14 16:19:35.595 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: RichKid | Số tiền: 13500.0
+2025-12-14 16:19:35.595 ERROR PaymentService - LỖI THANH TOÁN: Timeout kết nối đến ngân hàng cho giao dịch lớn.
+2025-12-14 16:19:35.596 ERROR OrderService - Hủy đơn hàng do thanh toán thất bại.
+2025-12-14 16:19:35.596 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=SlowGuy, Product=iPhone 15
+2025-12-14 16:19:35.600 ERROR InventoryService - Hết hàng! Khách mua 100 nhưng kho chỉ còn 2
+2025-12-14 16:19:35.600 INFO  OrderService - Hủy đơn hàng do hết kho.
+2025-12-14 16:19:35.601 INFO  InventoryService - 
+
+-------------------- END RUN SESSION --------------------
+2025-12-14 16:20:21.683 INFO  InventoryService - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 16:20:21.690 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=NguyenVanA, Product=iPhone 15
+2025-12-14 16:20:21.701 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 8
+2025-12-14 16:20:21.704 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: NguyenVanA | Số tiền: 2000.0
+2025-12-14 16:20:21.704 INFO  PaymentService - Thanh toán thành công!
+2025-12-14 16:20:21.705 INFO  OrderService - <<< ĐƠN HÀNG HOÀN TẤT THÀNH CÔNG CHO NguyenVanA
+2025-12-14 16:20:21.705 INFO  InventoryService - 
+
+--------------------  --------------------
+2025-12-14 16:20:21.705 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=TranVanB, Product=iPhone 15
+2025-12-14 16:20:21.705 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 3
+2025-12-14 16:20:21.706 WARN  InventoryService - CẢNH BÁO: Hàng sắp hết (3 sản phẩm). Cần nhập thêm ngay!
+2025-12-14 16:20:21.706 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: TranVanB | Số tiền: 5000.0
+2025-12-14 16:20:21.707 INFO  PaymentService - Thanh toán thành công!
+2025-12-14 16:20:21.707 INFO  OrderService - <<< ĐƠN HÀNG HOÀN TẤT THÀNH CÔNG CHO TranVanB
+2025-12-14 16:20:21.707 INFO  InventoryService - 
+
+--------------------  --------------------
+2025-12-14 16:20:21.707 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=RichKid, Product=iPhone 15
+2025-12-14 16:20:21.709 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 2
+2025-12-14 16:20:21.709 WARN  InventoryService - CẢNH BÁO: Hàng sắp hết (2 sản phẩm). Cần nhập thêm ngay!
+2025-12-14 16:20:21.710 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: RichKid | Số tiền: 13500.0
+2025-12-14 16:20:21.710 ERROR PaymentService - LỖI THANH TOÁN: Timeout kết nối đến ngân hàng cho giao dịch lớn.
+2025-12-14 16:20:21.710 ERROR OrderService - Hủy đơn hàng do thanh toán thất bại.
+2025-12-14 16:20:21.710 INFO  InventoryService - 
+
+--------------------  --------------------
+2025-12-14 16:20:21.711 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=SlowGuy, Product=iPhone 15
+2025-12-14 16:20:21.714 ERROR InventoryService - Hết hàng! Khách mua 100 nhưng kho chỉ còn 2
+2025-12-14 16:20:21.714 INFO  OrderService - Hủy đơn hàng do hết kho.
+2025-12-14 16:20:21.714 INFO  InventoryService - 
+
+-------------------- END RUN SESSION --------------------
+2025-12-14 16:21:34.747 INFO  InventoryService - 
+
+-------------------- NEW RUN SESSION --------------------
+2025-12-14 16:21:34.752 INFO  InventoryService - 
+
+-------------------- Kịch bản 1: Mua bình thường --------------------
+2025-12-14 16:21:34.753 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=NguyenVanA, Product=iPhone 15
+2025-12-14 16:21:34.764 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 8
+2025-12-14 16:21:34.768 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: NguyenVanA | Số tiền: 2000.0
+2025-12-14 16:21:34.768 INFO  PaymentService - Thanh toán thành công!
+2025-12-14 16:21:34.769 INFO  OrderService - <<< ĐƠN HÀNG HOÀN TẤT THÀNH CÔNG CHO NguyenVanA
+2025-12-14 16:21:34.769 INFO  InventoryService - 
+
+-------------------- Kịch bản 2: Mua số lượng lớn (Gây cảnh báo kho - WARN) --------------------
+2025-12-14 16:21:34.770 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=TranVanB, Product=iPhone 15
+2025-12-14 16:21:34.770 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 3
+2025-12-14 16:21:34.771 WARN  InventoryService - CẢNH BÁO: Hàng sắp hết (3 sản phẩm). Cần nhập thêm ngay!
+2025-12-14 16:21:34.771 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: TranVanB | Số tiền: 5000.0
+2025-12-14 16:21:34.771 INFO  PaymentService - Thanh toán thành công!
+2025-12-14 16:21:34.772 INFO  OrderService - <<< ĐƠN HÀNG HOÀN TẤT THÀNH CÔNG CHO TranVanB
+2025-12-14 16:21:34.772 INFO  InventoryService - 
+
+-------------------- Kịch bản 3: Mua quá số tiền (Gây lỗi thanh toán - ERROR) --------------------
+2025-12-14 16:21:34.772 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=RichKid, Product=iPhone 15
+2025-12-14 16:21:34.775 INFO  InventoryService - Đã trừ kho thành công. Tồn kho hiện tại: 2
+2025-12-14 16:21:34.775 WARN  InventoryService - CẢNH BÁO: Hàng sắp hết (2 sản phẩm). Cần nhập thêm ngay!
+2025-12-14 16:21:34.776 INFO  PaymentService - Bắt đầu xử lý thanh toán cho: RichKid | Số tiền: 13500.0
+2025-12-14 16:21:34.776 ERROR PaymentService - LỖI THANH TOÁN: Timeout kết nối đến ngân hàng cho giao dịch lớn.
+2025-12-14 16:21:34.776 ERROR OrderService - Hủy đơn hàng do thanh toán thất bại.
+2025-12-14 16:21:34.776 INFO  InventoryService - 
+
+-------------------- Kịch bản 4: Mua quá kho (Gây lỗi kho - ERROR) --------------------
+2025-12-14 16:21:34.777 INFO  OrderService - >>> NHẬN ĐƠN HÀNG MỚI: User=SlowGuy, Product=iPhone 15
+2025-12-14 16:21:34.779 ERROR InventoryService - Hết hàng! Khách mua 100 nhưng kho chỉ còn 2
+2025-12-14 16:21:34.779 INFO  OrderService - Hủy đơn hàng do hết kho.
+2025-12-14 16:21:34.780 INFO  InventoryService - 
+
+-------------------- END RUN SESSION --------------------
